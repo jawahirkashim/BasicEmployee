@@ -5,7 +5,7 @@ import com.cicd.employee.data.EmployeeDatabase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class Repository @Inject constructor(private val employeeDatabase: EmployeeDatabase){
+class Repository @Inject constructor(employeeDatabase: EmployeeDatabase){
 
     private val employeeDao = employeeDatabase.employeeDao()
 

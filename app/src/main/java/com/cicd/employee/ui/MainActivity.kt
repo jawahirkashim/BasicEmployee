@@ -3,7 +3,6 @@ package com.cicd.employee.ui
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cicd.employee.databinding.ActivityMainBinding
@@ -44,7 +43,6 @@ class MainActivity : AppCompatActivity() {
                 viewModel.allInsertedEmployees.collect {
                     val list = it ?: return@collect
                     listAdapter.submitList(list)
-                    //recyclerview.isVisible = list.isNotEmpty()
                 }
             }
 
