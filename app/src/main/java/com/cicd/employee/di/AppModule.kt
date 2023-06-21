@@ -10,8 +10,9 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 
-@Module
+
 //@InstallIn(ActivityComponent::class)
+@Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 

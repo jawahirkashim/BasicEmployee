@@ -14,6 +14,6 @@ interface EmployeeDao {
     @Query("SELECT * FROM employee")
     fun getAllEmployees():Flow<List<Employee>>
 
-    @Query("DELETE FROM employee WHERE name := empName")
+    @Query("DELETE FROM employee WHERE name = :empName")
     suspend fun deleteEmployee(empName:String)
 }
