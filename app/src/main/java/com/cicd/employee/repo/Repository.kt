@@ -5,13 +5,15 @@ import com.cicd.employee.data.EmployeeDatabase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class Repository @Inject constructor(employeeDatabase: EmployeeDatabase){
+class Repository @Inject constructor(employeeDatabase: EmployeeDatabase) {
 
     private val employeeDao = employeeDatabase.employeeDao()
 
     fun getAllEmployees(): Flow<List<Employee>> = employeeDao.getAllEmployees()
 
-    suspend fun insertEmployee(employee:Employee) = employeeDao.insertEmployee(employee)
+    suspend fun insertEmployee(employee: Employee) = employeeDao.insertEmployee(employee)
 
-    suspend fun deleteEmployee(empName:String) = employeeDao.deleteEmployee(empName)
+    suspend fun deleteEmployee(employee: Employee) = employeeDao.deleteEmployee(employee.name)
+    suspend fun update(employee: Employee) =
+        employeeDao.updateEmployee(employee.name, employee.department, employee.position,employee.id)
 }

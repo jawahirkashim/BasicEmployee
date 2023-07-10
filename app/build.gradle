@@ -44,6 +44,10 @@ kapt {
 }
 
 dependencies {
+
+    // CardView widget
+    implementation "androidx.cardview:cardview:1.0.0"
+
     // for view model using : by viewModels() delegate
     implementation "androidx.activity:activity-ktx:1.7.2"
 

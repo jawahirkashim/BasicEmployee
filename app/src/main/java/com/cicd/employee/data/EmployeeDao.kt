@@ -16,4 +16,7 @@ interface EmployeeDao {
 
     @Query("DELETE FROM employee WHERE name = :empName")
     suspend fun deleteEmployee(empName:String)
+
+    @Query("UPDATE employee Set name=:empName, department =:department , position =:position WHERE id=:id")
+    suspend fun updateEmployee(empName: String, department:String?, position: String?, id: Int)
 }
